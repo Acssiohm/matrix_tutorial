@@ -67,6 +67,52 @@ matrix matrix_add(matrix m, matrix n)
   return res;
 }
 
+matrix prod_matrix(matrix m, matrix n)
+{
+  matrix res={0,0,false,NULL};
+
+  if(m.n2!=n.n1 || !m.ok || !n.ok)
+    {return res;}
+
+  res=matrix_create(m.n1, n.n2, 0.);
+  for(unsigned i=0; i<m.n1; ++i){
+    for(unsigned j=0; j<n.n2; ++j){
+      for(unsigned k=0; k<m.n2; ++k){
+        *matrix_get(res, i, j) += *matrix_get(m, i, k) * *matrix_get(n, k, j);
+      }
+    }
+  }
+  return res;
+}
+
+matrix puiss_matrix(matrix m, unsigned n){
+	matrix res={0,0,false,NULL};
+
+	if(m.n1!=m.n2 || !m.ok)
+		{return res;}
+	
+	if(n==0){
+		res= matrix_identity(m.n1);
+	}
+//	else if(n==1){
+//		res=m;
+//	}
+	else if(n%2==0){
+		matrix tmp =puiss_matrix(m,n/2);
+		res = prod_matrix(tmp,tmp);
+		matrix_destroy(tmp);
+	}
+	else{
+		matrix tmp =puiss_matrix(m,n/2);
+		res = prod_matrix(prod_matrix(tmp,tmp),m);
+		matrix_destroy(tmp);
+	}
+
+	return res;
+}
+
+
+
 void matrix_print(FILE *f, matrix m)
 {
   if(!m.ok)

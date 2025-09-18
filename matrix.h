@@ -22,4 +22,7 @@ void matrix_print(FILE *f, matrix m);
 scalar matrix_trace(matrix m) ;
 matrix matrix_transp(matrix m);
 
+matrix prod_matrix(matrix m, matrix n);
+matrix puiss_matrix(matrix m, unsigned n);
+
 #endif /* MATRIX_H */

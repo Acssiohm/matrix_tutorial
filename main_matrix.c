@@ -29,6 +29,18 @@ int main(void)
   matrix_destroy(m);
   matrix_destroy(n);
   matrix_destroy(r);
+  
+  
+  // test de prod
+  matrix a = matrix_identity(5);
+  *matrix_get(a, 1, 0)=1.;
+  matrix b = puiss_matrix(a,4);
+  matrix_print(stdout, a);
+  matrix_print(stdout, b);
+  matrix_destroy(a);
+  matrix_destroy(b);
+  
+  
 
   return EXIT_SUCCESS;
 }
