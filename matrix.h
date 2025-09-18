@@ -19,10 +19,5 @@ scalar *matrix_get(matrix m, unsigned i, unsigned j);
 matrix matrix_add(matrix m, matrix n);
 void matrix_print(FILE *f, matrix m);
 
-<<<<<<< HEAD
-matrix add_matrix(matrix m, matrix n);
 matrix scale_matrix(matrix m, scalar a);
-
-=======
->>>>>>> upstream/main
 #endif /* MATRIX_H */
