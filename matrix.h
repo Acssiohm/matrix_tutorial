@@ -21,4 +21,6 @@ void matrix_print(FILE *f, matrix m);
 
 matrix add_matrix(matrix m, matrix n);
 
+scalar matrix_trace(matrix m) ;
+
 #endif /* MATRIX_H */
