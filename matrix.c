@@ -94,3 +94,11 @@ scalar matrix_trace(matrix m) {
   return d ;
 }
 
+matrix matrix_transp(matrix m) {
+    if (!m.ok) { return m; };
+    matrix r = matrix_create(m.n2, m.n1, 0.0);
+    for(unsigned i=0; i<r.n1; ++i)
+        for(unsigned j=0; j<r.n2; ++j)
+            *matrix_get(r, i, j) = *matrix_get(m, j, i);
+}
+
