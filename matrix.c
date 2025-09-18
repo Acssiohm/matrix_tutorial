@@ -82,3 +82,11 @@ void matrix_print(FILE *f, matrix m)
     }
   }
 }
+
+matrix scale_matrix(matrix m, scalar a){
+  matrix res = matrix_create(m.n1, m.n2, 0);
+  for(int k = 0; k < m.n1*m.n2; k++){
+    res.data[k] = a*m.data[k];
+  }
+  return res;
+}
