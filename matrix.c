@@ -131,8 +131,8 @@ void matrix_print(FILE *f, matrix m)
 
 scalar matrix_trace(matrix m) {
   unsigned int n=0 ;
-  if (m.n1<m.n2) {unsigned int n = m.n1 ; }
-  else {unsigned int n = m.n2 ; }
+  if (m.n1<m.n2) {n = m.n1 ; }
+  else {n = m.n2 ; }
   scalar d =0. ;
   for (unsigned i=0; i<n ; ++i) {
     d=d+*matrix_get(m,i,i) ;
