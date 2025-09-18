@@ -24,11 +24,16 @@ int main(void)
    *  43.00   1.00   1.00 
        1.00   2.00   1.00 
        1.00   1.00   2.00 */
+  
+  matrix s = scale_matrix(r, .5);
+  matrix_print(stdout, s);
+  
 
   // Free the memory allocated for all three matrices
   matrix_destroy(m);
   matrix_destroy(n);
   matrix_destroy(r);
+  matrix_destroy(s);
 
   return EXIT_SUCCESS;
 }
