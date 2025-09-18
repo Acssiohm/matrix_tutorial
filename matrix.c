@@ -108,7 +108,7 @@ matrix puiss_matrix(matrix m, unsigned n){
 		matrix_destroy(tmp);
 	}
 
-	return res
+	return res;
 }
 
 
