@@ -101,4 +101,3 @@ matrix matrix_transp(matrix m) {
         for(unsigned j=0; j<r.n2; ++j)
             *matrix_get(r, i, j) = *matrix_get(m, j, i);
 }
-
